@@ -14,19 +14,31 @@ html {
   font-family: Arial, Helvetica, sans-serif; /* fallback */
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 body {
   color: var(--primary-color);
   font-family: Inter;
-  margin: 0;
+}
+
+h1 {
+  /* page title */
+  text-align: center;
+  font-weight: 500;
+  padding: 16px 0px;
 }
 
 a {
   text-decoration: none;
-}
-
-h1 { /* page title */
-  text-align: center;
-  font-weight: 500;
 }
 
 /* start of top bar styling */
@@ -100,6 +112,69 @@ h1 { /* page title */
 }
 
 /* end of landing page content styling */
+
+/* start of accommodation page content styling */
+
+#accommodations {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.accommodation-card {
+  display: flex;
+  gap: 32px;
+
+  width: 76%;
+  margin: 0px auto;
+  padding: 16px;
+
+  border: 2px solid var(--secondary-color);
+  border-radius: 16px;
+}
+
+.accommodation-image {
+  width: 48%;
+  min-width: 48%;
+  height: 80%;
+  border-radius: 16px;
+}
+
+.accommodation-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin: 8px 0px;
+}
+
+.accommodation-price {
+  color: var(--secondary-color);
+  font-size: large;
+  font-weight: 500;
+}
+
+.accommodation-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.accommodation-feature-icon {
+  width: 24px;
+}
+
+.book-accommodation-button {
+  background-color: var(--secondary-color);
+  color: white;
+
+  width: fit-content;
+  padding: 8px 16px;
+
+  border-radius: 8px;
+}
+
+/* end of accommodation page content styling */
 
 /* start of contact page content styling */
 
