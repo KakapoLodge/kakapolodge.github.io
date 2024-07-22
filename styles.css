@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+h1 { /* page title */
+  text-align: center;
+  font-weight: 500;
+}
+
 /* start of top bar styling */
 
 #top-bar {
@@ -60,6 +65,9 @@ a {
 .main-menu-link {
   color: var(--primary-color);
 }
+.main-menu-link.selected-link {
+  color: var(--secondary-color);
+}
 .main-menu-link:hover {
   text-decoration: underline;
 }
@@ -81,7 +89,7 @@ a {
 
 /* end of top bar styling */
 
-/* start of landing content styling */
+/* start of landing page content styling */
 
 #main-banner {
   width: 100%;
@@ -91,10 +99,22 @@ a {
   padding: 0px 16vw;
 }
 
-#introduction-title {
-  text-align: center;
+/* end of landing page content styling */
 
-  font-weight: 500;
+/* start of contact page content styling */
+
+#contact-information {
+  display: flex;
 }
 
-/* end of landing content styling */
+#contact-details {
+  width: 50%;
+}
+
+#google-map {
+  border: 0;
+  width: 50%;
+  aspect-ratio: 1.7;
+}
+
+/* end of contact page content styling */
