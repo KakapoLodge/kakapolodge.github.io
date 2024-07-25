@@ -13,6 +13,8 @@
     <link href="../fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="../fontawesome/css/brands.css" rel="stylesheet" />
     <link href="../fontawesome/css/solid.css" rel="stylesheet" />
+
+    <script defer type="text/javascript" src="../scripts.js"></script>
   </head>
 
   <body>
@@ -55,8 +57,36 @@
     <main>
       <h1 id="page-title">Accommodation</h1>
 
+      <div id="accommodation-filters">
+        <div class="accommodation-filter">
+          <label for="private-room-checkbox">Private Room?</label>
+          <input
+            id="private-room-checkbox"
+            class="accommodation-checkbox"
+            type="checkbox"
+          />
+        </div>
+
+        <div class="accommodation-filter">
+          <label for="private-bathroom-checkbox">Private Bathroom?</label>
+          <input
+            id="private-bathroom-checkbox"
+            class="accommodation-checkbox"
+            type="checkbox"
+          />
+        </div>
+        <div class="accommodation-filter">
+          <label for="separate-beds-checkbox">Separate Beds?</label>
+          <input
+            id="separate-beds-checkbox"
+            class="accommodation-checkbox"
+            type="checkbox"
+          />
+        </div>
+      </div>
+
       <div id="accommodations">
-        <div class="accommodation-card">
+        <div id="dorm" class="accommodation-card">
           <img
             class="accommodation-image"
             src="../assets/subpages/accommodation/0_dorm/dorm_1.png"
@@ -96,7 +126,7 @@
           </div>
         </div>
 
-        <div class="accommodation-card">
+        <div id="private-double" class="accommodation-card">
           <img
             class="accommodation-image"
             src="../assets/subpages/accommodation/1_private_double/private_double_1.png"
@@ -136,7 +166,7 @@
           </div>
         </div>
 
-        <div class="accommodation-card">
+        <div id="private-twin" class="accommodation-card">
           <img
             class="accommodation-image"
             src="../assets/subpages/accommodation/2_private_twin/private_twin_1.png"
@@ -176,7 +206,7 @@
           </div>
         </div>
 
-        <div class="accommodation-card">
+        <div id="family-room" class="accommodation-card">
           <img
             class="accommodation-image"
             src="../assets/subpages/accommodation/3_family/family_1.png"
@@ -233,7 +263,7 @@
           </div>
         </div>
 
-        <div class="accommodation-card">
+        <div id="double-ensuite" class="accommodation-card">
           <img
             class="accommodation-image"
             src="../assets/subpages/accommodation/4_double_ensuite/double_ensuite_1.png"
@@ -288,7 +318,7 @@
           </div>
         </div>
 
-        <div class="accommodation-card">
+        <div id="deluxe-double-ensuite" class="accommodation-card">
           <img
             class="accommodation-image"
             src="../assets/subpages/accommodation/5_deluxe_double_ensuite/deluxe_double_ensuite_1.png"
@@ -343,14 +373,14 @@
           </div>
         </div>
 
-        <div class="accommodation-card">
+        <div id="motel-unit" class="accommodation-card">
           <img
             class="accommodation-image"
-            src="../assets/subpages/accommodation/6_motel/motel_1.png"
+            src="../assets/subpages/accommodation/6_motel_unit/motel_unit_1.png"
           />
 
           <div class="accommodation-text">
-            <h2>Motel</h2>
+            <h2>Motel Unit</h2>
 
             <p class="accommodation-price">Tonight: $140</p>
 

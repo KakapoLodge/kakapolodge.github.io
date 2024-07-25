@@ -48,7 +48,7 @@ a {
   justify-content: space-between;
 
   background-color: white;
-  box-shadow: 0px 2px 32px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 32px 2px rgba(0, 64, 0, 0.1);
 
   position: sticky;
   top: 0px;
@@ -114,6 +114,35 @@ a {
 /* end of landing page content styling */
 
 /* start of accommodation page content styling */
+
+#accommodation-filters {
+  display: flex;
+  gap: 20px;
+
+  padding: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  box-shadow: 0px 2px 32px 2px rgba(0, 64, 0, 0.1);
+  background-color: var(--secondary-color);
+  color: white;
+
+  position: sticky;
+  top: 80px;
+}
+
+.accommodation-filter {
+  display: flex;
+  align-items: center;
+}
+
+.accommodation-checkbox {
+  width: 20px;
+  height: 20px;
+}
+.accommodation-checkbox:checked {
+  /* TODO */
+}
 
 #accommodations {
   display: flex;
