@@ -120,13 +120,40 @@ const updateLodgeRate = (lodgeRate) => {
   );
   accommodationPrice.innerText = `Tonight: $${lodgeRate.rate}`;
 
-  // book direct: 5% off
-  const discountedPrice = (lodgeRate.rate * 0.95).toFixed(2);
+  const numAvailable = lodgeRate["num_available"];
+  const accommodationUnavailable = numAvailable === 0;
+
+  const bedOrRoom = accommodationId === "dorm" ? "bed" : "room";
+
+  let availabilityText = "";
+  if (accommodationUnavailable) {
+    availabilityText = "Sold out for tonight";
+  } else if (numAvailable === 1) {
+    availabilityText = `Only 1 ${bedOrRoom} left tonight!`;
+  } else {
+    availabilityText = `${numAvailable} ${bedOrRoom}s available tonight`;
+  }
+
+  console.log(accommodationId);
+  const accommodationAvailability = document.getElementById(
+    `${accommodationId}-availability`
+  );
+  accommodationAvailability.innerText = availabilityText;
+  accommodationAvailability.style.color = accommodationUnavailable
+    ? "#6E5546"
+    : "#4b5320";
 
   const bookAccommodationText = document.getElementById(
     `book-${accommodationId}-text`
   );
-  bookAccommodationText.innerText = `Book with us @ $${discountedPrice}`;
+
+  if (accommodationUnavailable) {
+    bookAccommodationText.innerText = "Book for another night";
+  } else {
+    // book direct: 5% off
+    const discountedPrice = (lodgeRate.rate * 0.95).toFixed(2);
+    bookAccommodationText.innerText = `Book with us @ $${discountedPrice}`;
+  }
 };
 
 main(); // code is ran here
