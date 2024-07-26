@@ -1,3 +1,13 @@
+const ALL_ACCOMMODATION = new Set([
+  "dorm",
+  "private-double",
+  "private-twin",
+  "family-room",
+  "double-ensuite",
+  "deluxe-double-ensuite",
+  "motel-unit",
+]);
+
 const PRIVATE_ROOMS = new Set([
   "private-double",
   "private-twin",
@@ -44,45 +54,51 @@ const enableAccommodationCheckboxes = () => {
   );
 
   for (const accommodationCheckbox of accommodationCheckboxes) {
-    accommodationCheckbox.onchange = () => filterAccommodations();
+    accommodationCheckbox.onchange = () => filterAccommodation();
   }
 
-  filterAccommodations();
+  filterAccommodation();
 };
 
-const filterAccommodations = () => {
+const filterAccommodation = () => {
   const accommodationCards =
     document.getElementsByClassName("accommodation-card");
-
-  const hiddenAvailableTonight = filterByAvailableTonight(accommodationCards);
-  const hiddenPrivateRoom = filterByPrivateRoom(accommodationCards);
-  const hiddenPrivateBathroom = filterByPrivateBathroom(accommodationCards);
-  const hiddenSeparateBeds = filterBySeparateBeds(accommodationCards);
-
-  const allHiddenAccommodation = new Set([
-    ...hiddenAvailableTonight,
-    ...hiddenPrivateRoom,
-    ...hiddenPrivateBathroom,
-    ...hiddenSeparateBeds,
-  ]);
+  const matchingAccommodation = getMatchingAccommodation(accommodationCards);
 
   for (const accommodationCard of accommodationCards) {
-    if (allHiddenAccommodation.has(accommodationCard.id)) {
-      accommodationCard.style.display = "none";
-    } else {
+    if (matchingAccommodation.has(accommodationCard.id)) {
       accommodationCard.style.display = "flex";
+    } else {
+      accommodationCard.style.display = "none";
     }
   }
 };
 
-const filterByAvailableTonight = (accommodationCards) => {
-  const hiddenAccommodations = new Set();
+const getMatchingAccommodation = (accommodationCards) => {
+  let matchingAccommodation = structuredClone(ALL_ACCOMMODATION);
 
+  matchingAccommodation = filterByAvailableTonight(
+    matchingAccommodation,
+    accommodationCards
+  );
+  matchingAccommodation = filterByPrivateRoom(matchingAccommodation);
+  matchingAccommodation = filterByPrivateBathroom(matchingAccommodation);
+  matchingAccommodation = filterBySeparateBeds(matchingAccommodation);
+
+  return matchingAccommodation;
+};
+
+const filterByAvailableTonight = (
+  matchingAccommodation,
+  accommodationCards
+) => {
   const availableTonightCheckbox = document.getElementById(
     "available-tonight-checkbox"
   );
 
   if (availableTonightCheckbox.checked) {
+    const availableTonight = new Set();
+
     for (const accommodationCard of accommodationCards) {
       const accommodationAvailability = document.getElementById(
         `${accommodationCard.id}-availability`
@@ -91,64 +107,43 @@ const filterByAvailableTonight = (accommodationCards) => {
       const unavailable =
         accommodationAvailability.innerText === "Sold out for tonight";
 
-      if (unavailable) {
-        hiddenAccommodations.add(accommodationCard.id);
+      if (!unavailable) {
+        availableTonight.add(accommodationCard.id);
       }
     }
-  }
 
-  return hiddenAccommodations;
+    return matchingAccommodation.intersection(availableTonight);
+  } else {
+    return matchingAccommodation;
+  }
 };
 
-const filterByPrivateRoom = (accommodationCards) => {
-  const hiddenAccommodations = new Set();
-
+const filterByPrivateRoom = (matchingAccommodation) => {
   const privateRoomCheckbox = document.getElementById("private-room-checkbox");
 
-  if (privateRoomCheckbox.checked) {
-    for (const accommodationCard of accommodationCards) {
-      if (!PRIVATE_ROOMS.has(accommodationCard.id)) {
-        hiddenAccommodations.add(accommodationCard.id);
-      }
-    }
-  }
-
-  return hiddenAccommodations;
+  return privateRoomCheckbox.checked
+    ? matchingAccommodation.intersection(PRIVATE_ROOMS)
+    : matchingAccommodation;
 };
 
-const filterByPrivateBathroom = (accommodationCards) => {
-  const hiddenAccommodations = new Set();
-
+const filterByPrivateBathroom = (matchingAccommodation) => {
   const privateBathroomCheckbox = document.getElementById(
     "private-bathroom-checkbox"
   );
 
-  if (privateBathroomCheckbox.checked) {
-    for (const accommodationCard of accommodationCards) {
-      if (!PRIVATE_BATHROOMS.has(accommodationCard.id)) {
-        hiddenAccommodations.add(accommodationCard.id);
-      }
-    }
-  }
-
-  return hiddenAccommodations;
+  return privateBathroomCheckbox.checked
+    ? matchingAccommodation.intersection(PRIVATE_BATHROOMS)
+    : matchingAccommodation;
 };
 
-const filterBySeparateBeds = (accommodationCards) => {
-  const hiddenAccommodations = new Set();
-
+const filterBySeparateBeds = (matchingAccommodation) => {
   const separateBedsCheckbox = document.getElementById(
     "separate-beds-checkbox"
   );
-  if (separateBedsCheckbox.checked) {
-    for (const accommodationCard of accommodationCards) {
-      if (!SEPARATE_BEDS.has(accommodationCard.id)) {
-        hiddenAccommodations.add(accommodationCard.id);
-      }
-    }
-  }
 
-  return hiddenAccommodations;
+  return separateBedsCheckbox.checked
+    ? matchingAccommodation.intersection(SEPARATE_BEDS)
+    : matchingAccommodation;
 };
 
 const showRealTimeRates = () => {
