@@ -6,6 +6,7 @@
 :root {
   --primary-color: #4b5320;
   --secondary-color: #8c9b3e;
+  --tertiary-color: #6e5546;
 }
 
 /* end custom properties */
@@ -213,7 +214,30 @@ a {
   border-radius: 8px;
 }
 
+#no-accommodation {
+  display: none;
+  gap: 32px;
 
+  width: 76%;
+  margin: 0px auto;
+  padding: 16px;
+
+  border: 2px solid var(--secondary-color);
+  border-radius: 16px;
+}
+
+#no-accommodation-message {
+  width: 100%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#no-accommodation-title {
+  color: var(--tertiary-color);
+}
 
 /* end of accommodation page content styling */
 

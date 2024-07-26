@@ -40,6 +40,10 @@ const ACCOMMODATION_TYPE_ID_MAP = {
   Motel: "motel-unit",
 };
 
+const PRIMARY_COLOR = "#4b5320";
+const SECONDARY_COLOR = "#8c9b3e";
+const TERTIARY_COLOR = "#6e5546";
+
 // const REAL_TIME_RATES_URL = "./mock_little_hotelier_response.json";
 const REAL_TIME_RATES_URL = "https://kakapo-lodge-rates.onrender.com/rates";
 
@@ -63,8 +67,26 @@ const enableAccommodationCheckboxes = () => {
 const filterAccommodation = () => {
   const accommodationCards =
     document.getElementsByClassName("accommodation-card");
+
   const matchingAccommodation = getMatchingAccommodation(accommodationCards);
 
+  for (const accommodationCard of accommodationCards) {
+    if (matchingAccommodation.has(accommodationCard.id)) {
+      accommodationCard.style.display = "flex";
+    } else {
+      accommodationCard.style.display = "none";
+    }
+  }
+
+  const noAccommodationCard = document.getElementById("no-accommodation");
+  noAccommodationCard.style.display =
+    matchingAccommodation.size === 0 ? "flex" : "none";
+};
+
+const showMatchingAccommodation = (
+  matchingAccommodation,
+  accommodationCards
+) => {
   for (const accommodationCard of accommodationCards) {
     if (matchingAccommodation.has(accommodationCard.id)) {
       accommodationCard.style.display = "flex";
@@ -185,8 +207,8 @@ const updateLodgeRate = (lodgeRate) => {
   );
   accommodationAvailability.innerText = availabilityText;
   accommodationAvailability.style.color = accommodationUnavailable
-    ? "#6E5546"
-    : "#4b5320";
+    ? TERTIARY_COLOR
+    : PRIMARY_COLOR;
 
   const bookAccommodationText = document.getElementById(
     `book-${accommodationId}-text`
