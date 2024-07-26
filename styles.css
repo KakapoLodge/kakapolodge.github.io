@@ -193,15 +193,27 @@ a {
   width: 24px;
 }
 
+.accommodation-availability {
+  color: var(--primary-color);
+  font-size: large;
+  /* font-weight: 300; */
+}
+
 .book-accommodation-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   background-color: var(--secondary-color);
   color: white;
 
-  width: fit-content;
+  width: 210px;
   padding: 8px 16px;
 
   border-radius: 8px;
 }
+
+
 
 /* end of accommodation page content styling */
 
