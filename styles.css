@@ -42,6 +42,14 @@ a {
   text-decoration: none;
 }
 
+/* start of multi-page styling */
+
+#page-content {
+  margin-bottom: 16px;
+}
+
+/* end of multi-page styling */
+
 /* start of top bar styling */
 
 #top-bar {
@@ -81,7 +89,7 @@ a {
 .main-menu-link.selected-link {
   color: var(--secondary-color);
 }
-.main-menu-link:hover {
+.main-menu-link:not(.selected-link):hover {
   text-decoration: underline;
 }
 
@@ -240,6 +248,32 @@ a {
 }
 
 /* end of accommodation page content styling */
+
+/* start of facilities page content styling */
+
+#facilities {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.facility {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 68%;
+  margin: 0px auto;
+}
+
+.divider {
+  width: 76%;
+  margin: 0px auto;
+
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+/* end of facilities page content styling */
 
 /* start of contact page content styling */
 
