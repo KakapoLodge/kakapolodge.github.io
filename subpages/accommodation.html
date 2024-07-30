@@ -107,41 +107,51 @@
       <h1 id="page-title">Accommodation</h1>
 
       <div id="accommodation-filters">
-        <div class="accommodation-filter">
-          <label for="available-tonight-checkbox">Available Tonight?</label>
-          <input
-            id="available-tonight-checkbox"
-            class="accommodation-checkbox"
-            type="checkbox"
-          />
+        <div id="mobile-filter-button">
+          Filter
+          <i class="fa-solid fa-arrow-down-wide-short"></i>
         </div>
 
-        <div class="accommodation-filter">
-          <label for="private-room-checkbox">Private Room?</label>
-          <input
-            id="private-room-checkbox"
-            class="accommodation-checkbox"
-            type="checkbox"
-          />
-        </div>
+        <div id="filter-options">
+          <div class="filter-option">
+            <label for="available-tonight-checkbox">Available Tonight?</label>
+            <input
+              id="available-tonight-checkbox"
+              class="accommodation-checkbox"
+              type="checkbox"
+            />
+          </div>
 
-        <div class="accommodation-filter">
-          <label for="private-bathroom-checkbox">Private Bathroom?</label>
-          <input
-            id="private-bathroom-checkbox"
-            class="accommodation-checkbox"
-            type="checkbox"
-          />
-        </div>
-        <div class="accommodation-filter">
-          <label for="separate-beds-checkbox">Separate Beds?</label>
-          <input
-            id="separate-beds-checkbox"
-            class="accommodation-checkbox"
-            type="checkbox"
-          />
+          <div class="filter-option">
+            <label for="private-room-checkbox">Private Room?</label>
+            <input
+              id="private-room-checkbox"
+              class="accommodation-checkbox"
+              type="checkbox"
+            />
+          </div>
+
+          <div class="filter-option">
+            <label for="private-bathroom-checkbox">Private Bathroom?</label>
+            <input
+              id="private-bathroom-checkbox"
+              class="accommodation-checkbox"
+              type="checkbox"
+            />
+          </div>
+
+          <div class="filter-option">
+            <label for="separate-beds-checkbox">Separate Beds?</label>
+            <input
+              id="separate-beds-checkbox"
+              class="accommodation-checkbox"
+              type="checkbox"
+            />
+          </div>
         </div>
       </div>
+
+      <br />
 
       <div id="accommodations">
         <div id="dorm" class="accommodation-card">
@@ -536,7 +546,6 @@
               </div>
             </div>
 
-            <br />
             <p id="motel-unit-availability" class="accommodation-availability">
               Only 1 room left tonight!
             </p>

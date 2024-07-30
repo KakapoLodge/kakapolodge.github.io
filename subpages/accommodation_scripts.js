@@ -44,12 +44,48 @@ const PRIMARY_COLOR = "#4b5320";
 const SECONDARY_COLOR = "#8c9b3e";
 const TERTIARY_COLOR = "#6e5546";
 
+const WINDOW_WIDTH = document.documentElement.clientWidth;
+const MOBILE_WIDTH_MAX_NUM_PIXELS = 700;
+
 // const REAL_TIME_RATES_URL = "./mock_little_hotelier_response.json";
 const REAL_TIME_RATES_URL = "https://kakapo-lodge-rates.onrender.com/rates";
 
 const enableAccommodationPage = () => {
+  enableMobileFilterButton();
   enableAccommodationCheckboxes();
   showRealTimeRates();
+};
+
+const enableMobileFilterButton = () => {
+  const filterButton = document.getElementById("mobile-filter-button");
+  const filterOptions = document.getElementById("filter-options");
+
+  if (WINDOW_WIDTH < MOBILE_WIDTH_MAX_NUM_PIXELS) {
+    closeFilterOptions(filterButton, filterOptions);
+    filterButton.onclick = () =>
+      toggleFilterOptions(filterButton, filterOptions);
+  }
+};
+
+const toggleFilterOptions = (filterButton, filterOptions) => {
+  filterButton.disabled = true;
+  setTimeout(() => (filterButton.disabled = false), 1000);
+
+  if (filterOptions.style.display === "none") {
+    openFilterOptions(filterButton, filterOptions);
+  } else {
+    closeFilterOptions(filterButton, filterOptions);
+  }
+};
+
+const closeFilterOptions = (filterButton, filterOptions) => {
+  filterButton.style.borderBottom = "none";
+  filterOptions.style.display = "none";
+};
+
+const openFilterOptions = (filterButton, filterOptions) => {
+  filterButton.style.borderBottom = "1px solid var(--primary-color)";
+  filterOptions.style.display = "flex";
 };
 
 const enableAccommodationCheckboxes = () => {
@@ -70,13 +106,7 @@ const filterAccommodation = () => {
 
   const matchingAccommodation = getMatchingAccommodation(accommodationCards);
 
-  for (const accommodationCard of accommodationCards) {
-    if (matchingAccommodation.has(accommodationCard.id)) {
-      accommodationCard.style.display = "flex";
-    } else {
-      accommodationCard.style.display = "none";
-    }
-  }
+  showMatchingAccommodation(matchingAccommodation, accommodationCards);
 
   const noAccommodationCard = document.getElementById("no-accommodation");
   noAccommodationCard.style.display =

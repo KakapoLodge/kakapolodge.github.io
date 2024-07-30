@@ -20,9 +20,7 @@ const toggleMobileMenu = (menuButton, mainNav, mainMenu, bookDirectButton) => {
   menuButton.disabled = true;
   setTimeout(() => (menuButton.disabled = false), 1000);
 
-  const height = mainNav.style.height;
-
-  if (height === "0px") {
+  if (mainNav.style.height === "0px") {
     openMobileMenu(mainNav, mainMenu, bookDirectButton);
   } else {
     closeMobileMenu(mainNav, mainMenu, bookDirectButton);
