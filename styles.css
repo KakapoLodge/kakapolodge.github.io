@@ -52,10 +52,7 @@ a {
 
 /* start of top bar styling */
 
-#top-bar {
-  display: flex;
-  justify-content: space-between;
-
+#main-top-bar {
   background-color: white;
   box-shadow: 0px 2px 32px 2px rgba(0, 64, 0, 0.1);
 
@@ -63,22 +60,40 @@ a {
   top: 0px;
 }
 
-#logo {
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-logo {
   height: 80px;
 }
 
-#main-nav {
+.main-nav {
   display: flex;
+
+  @media (width < 800px) {
+    flex-direction: column;
+  }
 }
 
-#main-menu {
+.main-menu {
   display: flex;
+
+  @media (width < 800px) {
+    flex-direction: column;
+    padding-left: 0px;
+
+    margin: 0px 32px;
+    gap: 16px;
+  }
 }
 
 .main-menu-item {
   list-style: none;
 
   display: flex;
+  justify-content: right;
   align-items: center;
   margin: 0px 12px;
 }
@@ -93,19 +108,104 @@ a {
   text-decoration: underline;
 }
 
-#book-direct-button {
+.book-direct-button {
   background-color: var(--primary-color);
   color: white;
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   margin: 16px;
   padding: 0px 24px;
   border-radius: 8px;
+
+  @media (width < 800px) {
+    margin: 16px 32px;
+    padding: 12px 0px;
+  }
 }
-#book-direct-button:hover {
+.book-direct-button:hover {
   background-color: var(--secondary-color);
+}
+
+#desktop-top-bar {
+  @media (width < 800px) {
+    display: none;
+  }
+}
+
+#mobile-top-bar {
+  display: none;
+
+  @media (width < 800px) {
+    display: flex;
+  }
+}
+
+#mobile-menu-button {
+  font-size: 40px;
+  padding: 20px 32px;
+}
+
+#mobile-main-nav,
+#mobile-main-menu,
+#mobile-book-direct-button {
+  transition: 0.4s;
+}
+
+#mobile-main-menu,
+#mobile-book-direct-button {
+  animation: fade-in 1s;
+  -webkit-animation: fade-in 1s;
+  -moz-animation: fade-in 1s;
+  -o-animation: fade-in 1s;
+  -ms-animation: fade-in 1s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* end of top bar styling */

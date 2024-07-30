@@ -8,16 +8,66 @@
     <title>Contact | Kakapo Lodge</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../styles.css" />
+
+    <!--icons-->
+    <link href="../fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="../fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="../fontawesome/css/solid.css" rel="stylesheet" />
+
+    <script defer type="text/javascript" src="../scripts.js"></script>
   </head>
 
   <body>
-    <header id="top-bar">
-      <a href="../index.html">
-        <img id="logo" src="../assets/kakapo_logo_with_text.png" />
-      </a>
+    <header id="main-top-bar">
+      <div id="desktop-top-bar" class="top-bar">
+        <a href="../index.html">
+          <img class="main-logo" src="../assets/kakapo_logo_with_text.png" />
+        </a>
 
-      <nav id="main-nav">
-        <ul id="main-menu">
+        <nav class="main-nav">
+          <ul class="main-menu">
+            <li class="main-menu-item">
+              <a class="main-menu-link" href="./accommodation.html">
+                Accommodation
+              </a>
+            </li>
+            <li class="main-menu-item">
+              <a class="main-menu-link" href="./facilities.html">Facilities</a>
+            </li>
+            <li class="main-menu-item">
+              <a
+                class="main-menu-link"
+                target="_blank"
+                href="https://visithanmersprings.co.nz/things-to-do/"
+              >
+                Attractions
+              </a>
+            </li>
+            <li class="main-menu-item">
+              <a class="main-menu-link selected-link">Contact</a>
+            </li>
+          </ul>
+
+          <a
+            class="book-direct-button"
+            target="_blank"
+            href="https://apac.littlehotelier.com/properties/kakapolodgedirect"
+          >
+            Book Direct
+          </a>
+        </nav>
+      </div>
+
+      <div id="mobile-top-bar" class="top-bar">
+        <a href="../index.html">
+          <img class="main-logo" src="../assets/kakapo_logo_with_text.png" />
+        </a>
+
+        <i id="mobile-menu-button" class="fa-solid fa-bars"></i>
+      </div>
+
+      <nav id="mobile-main-nav" class="main-nav">
+        <ul id="mobile-main-menu" class="main-menu">
           <li class="main-menu-item">
             <a class="main-menu-link" href="./accommodation.html">
               Accommodation
@@ -31,8 +81,9 @@
               class="main-menu-link"
               target="_blank"
               href="https://visithanmersprings.co.nz/things-to-do/"
-              >Attractions</a
             >
+              Attractions
+            </a>
           </li>
           <li class="main-menu-item">
             <a class="main-menu-link selected-link">Contact</a>
@@ -40,7 +91,8 @@
         </ul>
 
         <a
-          id="book-direct-button"
+          id="mobile-book-direct-button"
+          class="book-direct-button"
           target="_blank"
           href="https://apac.littlehotelier.com/properties/kakapolodgedirect"
         >

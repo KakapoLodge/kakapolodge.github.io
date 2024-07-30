@@ -47,7 +47,7 @@ const TERTIARY_COLOR = "#6e5546";
 // const REAL_TIME_RATES_URL = "./mock_little_hotelier_response.json";
 const REAL_TIME_RATES_URL = "https://kakapo-lodge-rates.onrender.com/rates";
 
-const main = () => {
+const enableAccommodationPage = () => {
   enableAccommodationCheckboxes();
   showRealTimeRates();
 };
@@ -223,4 +223,4 @@ const updateLodgeRate = (lodgeRate) => {
   }
 };
 
-main(); // code is ran here
+enableAccommodationPage(); // code is ran here
