@@ -31,18 +31,22 @@ body {
   font-family: Inter;
 }
 
-h1 {
-  /* page title */
-  text-align: center;
-  font-weight: 500;
-  padding: 16px 0px;
-}
-
 a {
   text-decoration: none;
 }
 
 /* start of multi-page styling */
+
+#page-title {
+  text-align: center;
+  font-weight: 500;
+  padding: 16px 0px;
+
+  @media (width < 700px) {
+    font-size:x-large;
+    padding: 10px 0px;
+  }
+}
 
 #page-content {
   margin-bottom: 16px;
