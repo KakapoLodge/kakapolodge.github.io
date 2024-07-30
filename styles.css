@@ -223,7 +223,15 @@ a {
 }
 
 #introduction {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   padding: 0px 16vw;
+
+  @media (width < 700px) {
+    padding: 0px 32px;
+  }
 }
 
 /* end of landing page content styling */
