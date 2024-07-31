@@ -293,7 +293,7 @@ a {
   position: sticky;
   top: 80px;
 
-  @media (width < 700px) {
+  @media (width < 800px) {
     top: 64px;
   }
 }
