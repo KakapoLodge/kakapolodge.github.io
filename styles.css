@@ -73,6 +73,10 @@ a {
 
 .main-logo {
   height: 80px;
+
+  @media (width < 800px) {
+    height: 64px;
+  }
 }
 
 .main-nav {
@@ -88,10 +92,10 @@ a {
 
   @media (width < 800px) {
     flex-direction: column;
-    padding-left: 0px;
-
-    margin: 0px 32px;
     gap: 16px;
+
+    margin: 0px 16px;
+    padding-left: 0px;
   }
 }
 
@@ -127,7 +131,7 @@ a {
   border-radius: 8px;
 
   @media (width < 800px) {
-    margin: 16px 32px;
+    margin: 16px 24px;
     padding: 12px 0px;
   }
 }
@@ -150,8 +154,8 @@ a {
 }
 
 #mobile-menu-button {
-  font-size: 40px;
-  padding: 20px 32px;
+  font-size: 32px;
+  padding: 16px 28px;
 }
 
 #mobile-main-nav,
@@ -245,6 +249,10 @@ a {
 
   position: sticky;
   top: 80px;
+
+  @media (width < 700px) {
+    top: 64px;
+  }
 }
 
 #mobile-filter-button {
