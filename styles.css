@@ -466,16 +466,33 @@ a {
 
 #contact-information {
   display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (width < 700px) {
+  gap: 24px;
+  }
 }
 
-#contact-details {
-  width: 50%;
+.contact-details {
+  text-align: center;
+}
+
+.contact-details-header {
+  @media (width < 700px) {
+    font-size: larger;
+  }
 }
 
 #google-map {
   border: 0;
-  width: 50%;
+  width: 64%;
   aspect-ratio: 1.7;
+
+  @media (width < 700px) {
+    width: 100%;
+    aspect-ratio: 1.2;
+  }
 }
 
 /* end of contact page content styling */
