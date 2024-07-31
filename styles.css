@@ -222,6 +222,16 @@ a {
 
 /* start of landing page content styling */
 
+#landing-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (width < 700px) {
+    gap: 24px;
+  }
+}
+
 #main-banner {
   width: 100%;
 }
@@ -235,6 +245,39 @@ a {
 
   @media (width < 700px) {
     padding: 0px 32px;
+  }
+}
+
+#introduction-title {
+  text-align: center;
+  font-weight: 500;
+
+  @media (width < 700px) {
+    font-size: x-large;
+  }
+}
+
+#reviews-title {
+  font-size: larger;
+  text-align: center;
+}
+
+#desktop-tripadvisor-reviews {
+  width: 468px;
+  margin: 0px auto;
+
+  @media (width < 700px) {
+    display: none;
+  }
+}
+
+#mobile-tripadvisor-reviews {
+  width: 240px;
+  margin: 0px auto;
+  display: none;
+
+  @media (width < 700px) {
+    display: block;
   }
 }
 
@@ -302,6 +345,10 @@ a {
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media (width < 700px) {
+    gap: 16px;
+  }
 }
 
 .accommodation-card {
@@ -470,7 +517,7 @@ a {
   gap: 32px;
 
   @media (width < 700px) {
-  gap: 24px;
+    gap: 24px;
   }
 }
 
