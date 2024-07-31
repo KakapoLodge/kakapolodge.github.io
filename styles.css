@@ -430,7 +430,7 @@ a {
 
   @media (width < 700px) {
     gap: 4px;
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -447,7 +447,8 @@ a {
   border-bottom: 2px solid var(--secondary-color);
 
   @media (width < 700px) {
-    width: 88%;
+    width: 100%;
+    border-bottom: 1px solid var(--secondary-color);
   }
 }
 
