@@ -512,7 +512,7 @@ a {
 
   @media (width < 700px) {
     gap: 4px;
-    width: 100%;
+    width: calc(100% - 16px);
   }
 }
 
