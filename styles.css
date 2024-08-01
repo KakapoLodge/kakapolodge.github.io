@@ -11,6 +11,8 @@
 
 /* end custom properties */
 
+/* start of base styling */
+
 html {
   font-family: Arial, Helvetica, sans-serif; /* fallback */
 }
@@ -35,10 +37,13 @@ a {
   text-decoration: none;
 }
 
+/* end of base styling */
+
 /* start of multi-page styling */
 
 #page-title {
   text-align: center;
+  font-size: xx-large;
   font-weight: 500;
   padding: 16px 0px;
 
@@ -89,6 +94,7 @@ a {
 
 .main-menu {
   display: flex;
+  margin: 0px;
 
   @media (width < 800px) {
     flex-direction: column;
@@ -470,6 +476,8 @@ a {
   flex-direction: column;
   gap: 16px;
 
+  margin-bottom: 16px;
+
   @media (width < 700px) {
     gap: 12px;
   }
@@ -490,6 +498,8 @@ a {
 }
 
 .facility-name {
+  font-size: x-large;
+
   @media (width < 700px) {
     font-size: larger;
   }
