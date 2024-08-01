@@ -48,7 +48,8 @@ const WINDOW_WIDTH = document.documentElement.clientWidth;
 const MOBILE_WIDTH_MAX_NUM_PIXELS = 700;
 
 // const REAL_TIME_RATES_URL = "./mock_little_hotelier_response.json";
-const REAL_TIME_RATES_URL = "https://kakapo-lodge-rates.onrender.com/rates";
+const REAL_TIME_RATES_URL =
+  "https://kakapo-lodge-rates.onrender.com/rates/tonight";
 
 const enableAccommodationPage = () => {
   enableMobileFilterButton();
