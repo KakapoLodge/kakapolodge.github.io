@@ -6,40 +6,34 @@ const enableMenuButton = () => {
   const menuButton = document.getElementById("mobile-menu-button");
   const mainNav = document.getElementById("mobile-main-nav");
   const mainMenu = document.getElementById("mobile-main-menu");
-  const bookDirectButton = document.getElementById("mobile-book-direct-button");
 
   if (menuButton) {
-    closeMobileMenu(mainNav, mainMenu, bookDirectButton);
+    closeMobileMenu(mainNav, mainMenu);
 
     menuButton.onclick = () =>
-      toggleMobileMenu(menuButton, mainNav, mainMenu, bookDirectButton);
+      toggleMobileMenu(menuButton, mainNav, mainMenu);
   }
 };
 
-const toggleMobileMenu = (menuButton, mainNav, mainMenu, bookDirectButton) => {
+const toggleMobileMenu = (menuButton, mainNav, mainMenu) => {
   menuButton.disabled = true;
   setTimeout(() => (menuButton.disabled = false), 1000);
 
   if (mainNav.style.height === "0px") {
-    openMobileMenu(mainNav, mainMenu, bookDirectButton);
+    openMobileMenu(mainNav, mainMenu);
   } else {
-    closeMobileMenu(mainNav, mainMenu, bookDirectButton);
+    closeMobileMenu(mainNav, mainMenu);
   }
 };
 
-const openMobileMenu = (mainNav, mainMenu, bookDirectButton) => {
-  mainNav.style.height = "200px";
+const openMobileMenu = (mainNav, mainMenu) => {
+  mainNav.style.height = "161px";
   mainMenu.style.display = "flex";
-
-  bookDirectButton.style.display = "flex";
-  bookDirectButton.style.transition = "1.0s";
 };
 
-const closeMobileMenu = (mainNav, mainMenu, bookDirectButton) => {
+const closeMobileMenu = (mainNav, mainMenu) => {
   mainNav.style.height = "0px";
   mainMenu.style.display = "none";
-
-  bookDirectButton.style.display = "none";
 };
 
 main(); // code is ran here
