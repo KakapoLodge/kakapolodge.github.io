@@ -53,7 +53,7 @@ a {
   }
 }
 
-#page-content {
+.page-content {
   margin-bottom: 16px;
 }
 
@@ -353,7 +353,7 @@ a {
   /* TODO */
 }
 
-#accommodations {
+#accommodation-cards {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -496,8 +496,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  margin-bottom: 16px;
 
   @media (width < 700px) {
     gap: 12px;
