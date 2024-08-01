@@ -1,5 +1,5 @@
 const ALL_ACCOMMODATION = new Set([
-  "dorm",
+  "5-bed-dorm",
   "private-double",
   "private-twin",
   "family-room",
@@ -24,14 +24,14 @@ const PRIVATE_BATHROOMS = new Set([
 ]);
 
 const SEPARATE_BEDS = new Set([
-  "dorm",
+  "5-bed-dorm",
   "private-twin",
   "family-room",
   "motel-unit",
 ]);
 
 const ACCOMMODATION_TYPE_ID_MAP = {
-  "5 Bed Dorm": "dorm",
+  "5 Bed Dorm": "5-bed-dorm",
   "Private Double": "private-double",
   "Private Twin": "private-twin",
   "Family Room": "family-room",
@@ -221,7 +221,7 @@ const updateLodgeRate = (lodgeRate) => {
   const numAvailable = lodgeRate["num_available"];
   const accommodationUnavailable = numAvailable === 0;
 
-  const bedOrRoom = accommodationId === "dorm" ? "bed" : "room";
+  const bedOrRoom = accommodationId.includes("dorm") ? "bed" : "room";
 
   let availabilityText = "";
   if (accommodationUnavailable) {
