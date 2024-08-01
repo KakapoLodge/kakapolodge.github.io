@@ -57,7 +57,7 @@ a {
   margin-bottom: 16px;
 
   @media (width < 800px) {
-    margin-bottom: 64px;
+    margin-bottom: 72px;
   }
 }
 
@@ -147,10 +147,15 @@ a {
     padding: 6px 0px;
 
     width: 48%;
+    height: 44px;
   }
 }
 .book-direct-button:hover {
   background-color: var(--secondary-color);
+}
+
+#five-percent-off-symbol {
+  height: 32px;
 }
 
 #desktop-top-bar {
