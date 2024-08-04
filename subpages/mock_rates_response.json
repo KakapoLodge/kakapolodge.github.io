@@ -1,0 +1,198 @@
+[
+  {
+      "id": 9239,
+      "name": "5 Bed Dorm",
+      "rate_plan_dates": [
+          {
+              "available": 5,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-05",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 45,
+              "stop_online_sell": false
+          },
+          {
+              "available": 5,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-06",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 45,
+              "stop_online_sell": false
+          }
+      ]
+  },
+  {
+      "id": 9240,
+      "name": "Motel",
+      "rate_plan_dates": [
+          {
+              "available": 1,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-05",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 140,
+              "stop_online_sell": false
+          },
+          {
+              "available": 1,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-06",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 140,
+              "stop_online_sell": false
+          }
+      ]
+  },
+  {
+      "id": 9242,
+      "name": "Double Ensuite",
+      "rate_plan_dates": [
+          {
+              "available": 2,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-05",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 110,
+              "stop_online_sell": false
+          },
+          {
+              "available": 2,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-06",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 110,
+              "stop_online_sell": false
+          }
+      ]
+  },
+  {
+      "id": 9243,
+      "name": "Private Double",
+      "rate_plan_dates": [
+          {
+              "available": 3,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-05",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 90,
+              "stop_online_sell": false
+          },
+          {
+              "available": 5,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-06",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 90,
+              "stop_online_sell": false
+          }
+      ]
+  },
+  {
+      "id": 9244,
+      "name": "Private Twin",
+      "rate_plan_dates": [
+          {
+              "available": 2,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-05",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 96,
+              "stop_online_sell": false
+          },
+          {
+              "available": 3,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-06",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 96,
+              "stop_online_sell": false
+          }
+      ]
+  },
+  {
+      "id": 9245,
+      "name": "Family Room",
+      "rate_plan_dates": [
+          {
+              "available": 0,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-05",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 120,
+              "stop_online_sell": false
+          },
+          {
+              "available": 1,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-06",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 120,
+              "stop_online_sell": false
+          }
+      ]
+  },
+  {
+      "id": 73051,
+      "name": "Deluxe Double Ensuite",
+      "rate_plan_dates": [
+          {
+              "available": 0,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-05",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 120,
+              "stop_online_sell": false
+          },
+          {
+              "available": 0,
+              "close_to_arrival": false,
+              "close_to_departure": false,
+              "date": "2024-08-06",
+              "id": null,
+              "max_stay": null,
+              "min_stay": 1,
+              "rate": 120,
+              "stop_online_sell": false
+          }
+      ]
+  }
+]

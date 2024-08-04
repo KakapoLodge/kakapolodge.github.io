@@ -9,6 +9,14 @@
   --tertiary-color: #6e5546;
 }
 
+:host {
+  --color-bg-default: white;
+  --color-fg-primary: #4b5320; /* range start and end background color */
+  --color-fg-default: #4b5320; /* color for rest of text */
+  --color-fg-accent: #6e5546; /* today's date color */
+  --color-bg-inrange: #8c9b3e; /* range in-between background color */
+}
+
 /* end custom properties */
 
 /* start of base styling */
@@ -393,6 +401,13 @@ a {
 }
 .accommodation-checkbox:checked {
   /* TODO */
+}
+
+#date-range-picker {
+  color: var(--primary-color);
+
+  border-radius: 4px;
+  border: none;
 }
 
 #accommodation-cards {

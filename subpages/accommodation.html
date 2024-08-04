@@ -21,6 +21,9 @@
       src="../bootstrap/js/bootstrap.min.js"
     ></script>
 
+    <!--easepick datepicker-->
+    <script src="../easepick/bundle/index.umd.min.js"></script>
+
     <!--custom styles and scripts-->
     <link rel="stylesheet" type="text/css" href="../styles.css" />
     <script defer type="text/javascript" src="../scripts.js"></script>
@@ -160,41 +163,37 @@
         </div>
 
         <div id="filter-options">
-          <div class="filter-option">
-            <label for="available-tonight-checkbox">Available Tonight?</label>
-            <input
-              id="available-tonight-checkbox"
-              class="accommodation-checkbox"
-              type="checkbox"
-            />
-          </div>
+            <div class="filter-option">
+              <label for="date-range-picker">Dates: </label>
+              <input id="date-range-picker" />
+            </div>
 
-          <div class="filter-option">
-            <label for="private-room-checkbox">Private Room?</label>
-            <input
-              id="private-room-checkbox"
-              class="accommodation-checkbox"
-              type="checkbox"
-            />
-          </div>
+            <div class="filter-option">
+              <label for="private-room-checkbox">Private Room?</label>
+              <input
+                id="private-room-checkbox"
+                class="accommodation-checkbox"
+                type="checkbox"
+              />
+            </div>
 
-          <div class="filter-option">
-            <label for="private-bathroom-checkbox">Private Bathroom?</label>
-            <input
-              id="private-bathroom-checkbox"
-              class="accommodation-checkbox"
-              type="checkbox"
-            />
-          </div>
+            <div class="filter-option">
+              <label for="private-bathroom-checkbox">Private Bathroom?</label>
+              <input
+                id="private-bathroom-checkbox"
+                class="accommodation-checkbox"
+                type="checkbox"
+              />
+            </div>
 
-          <div class="filter-option">
-            <label for="separate-beds-checkbox">Separate Beds?</label>
-            <input
-              id="separate-beds-checkbox"
-              class="accommodation-checkbox"
-              type="checkbox"
-            />
-          </div>
+            <div class="filter-option">
+              <label for="separate-beds-checkbox">Separate Beds?</label>
+              <input
+                id="separate-beds-checkbox"
+                class="accommodation-checkbox"
+                type="checkbox"
+              />
+            </div>
         </div>
       </div>
 
