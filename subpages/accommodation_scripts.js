@@ -62,10 +62,11 @@ const enableAccommodationPage = () => {
 
 const enableMobileFilterButton = () => {
   const filterButton = document.getElementById("mobile-filter-button");
-  const filterOptions = document.getElementById("filter-options");
+  const filterOptions = document.getElementById("mobile-filter-options");
 
   if (WINDOW_WIDTH < MOBILE_WIDTH_MAX_NUM_PIXELS) {
-    closeFilterOptions(filterButton, filterOptions);
+    closeFilterOptions(filterOptions);
+
     filterButton.onclick = () =>
       toggleFilterOptions(filterButton, filterOptions);
   }
@@ -76,19 +77,17 @@ const toggleFilterOptions = (filterButton, filterOptions) => {
   setTimeout(() => (filterButton.disabled = false), 1000);
 
   if (filterOptions.style.display === "none") {
-    openFilterOptions(filterButton, filterOptions);
+    openFilterOptions(filterOptions);
   } else {
-    closeFilterOptions(filterButton, filterOptions);
+    closeFilterOptions(filterOptions);
   }
 };
 
-const closeFilterOptions = (filterButton, filterOptions) => {
-  filterButton.style.borderBottom = "none";
+const closeFilterOptions = (filterOptions) => {
   filterOptions.style.display = "none";
 };
 
-const openFilterOptions = (filterButton, filterOptions) => {
-  filterButton.style.borderBottom = "1px solid var(--primary-color)";
+const openFilterOptions = (filterOptions) => {
   filterOptions.style.display = "flex";
 };
 

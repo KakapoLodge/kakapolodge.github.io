@@ -27,7 +27,7 @@ const toggleMobileMenu = (menuButton, mainNav, mainMenu) => {
 };
 
 const openMobileMenu = (mainNav, mainMenu) => {
-  mainNav.style.height = "161px";
+  mainNav.style.height = "175px";
   mainMenu.style.display = "flex";
 };
 
