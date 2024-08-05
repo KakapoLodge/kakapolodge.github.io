@@ -139,36 +139,6 @@ const getMatchingAccommodation = () => {
   return matchingAccommodation;
 };
 
-const filterByAvailableTonight = (
-  matchingAccommodation,
-  accommodationCards
-) => {
-  const availableTonightCheckbox = document.getElementById(
-    "available-tonight-checkbox"
-  );
-
-  if (availableTonightCheckbox.checked) {
-    const availableTonight = new Set();
-
-    for (const accommodationCard of accommodationCards) {
-      const accommodationAvailability = document.getElementById(
-        `${accommodationCard.id}-availability`
-      );
-
-      const unavailable =
-        accommodationAvailability.innerText === "Sold out for tonight";
-
-      if (!unavailable) {
-        availableTonight.add(accommodationCard.id);
-      }
-    }
-
-    return matchingAccommodation.intersection(availableTonight);
-  } else {
-    return matchingAccommodation;
-  }
-};
-
 const filterByPrivateRoom = (matchingAccommodation) => {
   const privateRoomCheckbox = document.getElementById("private-room-checkbox");
 
@@ -349,7 +319,7 @@ const getAvailabilityText = (
   bedOrRoom
 ) => {
   if (!isAvailable) {
-    return `Sold out for ${isStayTonight ? "tonight" : "this period"}`;
+    return `Unavailable for ${isStayTonight ? "tonight" : "this period"}`;
   } else if (numAvailable === 1) {
     return `Only 1 ${bedOrRoom} left  ${
       isStayTonight ? "tonight" : "for this period"
