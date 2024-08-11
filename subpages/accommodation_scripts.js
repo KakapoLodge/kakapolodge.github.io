@@ -30,7 +30,7 @@ const SEPARATE_BEDS = new Set([
   "motel-unit",
 ]);
 
-const ACCOMMODATION_TYPE_ID_MAP = {
+const ACCOMMODATION_NAME_ID_MAP = {
   "5 Bed Dorm": "5-bed-dorm",
   "Private Double": "private-double",
   "Private Twin": "private-twin",
@@ -240,7 +240,11 @@ const updateAllAccommodationInfo = (ratePlans, isStayTonight) => {
 };
 
 const updateAccommodationInfo = (ratePlan, isStayTonight) => {
-  const accommodationId = ACCOMMODATION_TYPE_ID_MAP[ratePlan.name];
+  if (!(ratePlan.name in ACCOMMODATION_NAME_ID_MAP)) {
+    return;
+  }
+
+  const accommodationId = ACCOMMODATION_NAME_ID_MAP[ratePlan.name];
   const ratePlanDates = ratePlan["rate_plan_dates"];
 
   const totalPrice = getTotalPrice(ratePlanDates);
